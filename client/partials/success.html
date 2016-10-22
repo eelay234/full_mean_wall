@@ -1,0 +1,27 @@
+<div ng-controller="successController">
+<h1 id="title">Full Mean Wall</h1>
+<h2 id="welcome">Welcome, {{ user_login.first_name}}!</h2>
+Post a Message:
+<div ng-if="errorMessage_post">{{ errorMessage_post }}</div>
+<form ng-submit="post()">
+    <input type="text" ng-model="message" name="message" id="message"><br>
+    <input type="submit" value="Post a message!" id="add-btn">
+</form>
+<div ng-repeat="post in posts | orderBy: '-created_at' ">
+  <h3>{{post.name}} - {{post.created_at | date:'M/d/yyyy HH:mm:ss' }}</h3>
+  <p>{{ post.message }}</p>
+
+  <div class="comment-div" ng-init='c[post._id] = ""' ng-repeat="comment in post.comments | orderBy: 'created_at'" track by $index>
+    <h5>{{ comment.name }} - {{ comment.created_at }}</h5>
+    <p>{{ comment.text }}</p>
+  </div>
+  <div class="comment-div">
+      Post a comment:
+      <form ng-submit=add_comment(post._id)>
+        <input type="text" ng-model="c[post._id]" name="c" id="c"><br>
+        <input type="submit" name="submit" value="Post a comment">
+      </form>
+  </div>
+</div>
+<a href="#/logout">Sign out</a>
+</div>

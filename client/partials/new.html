@@ -1,0 +1,12 @@
+<!-- You will attach an ng-model and an ng-submit to your forms (but might want to wait until the next tab, when you have your controllers and factory) -->
+New!
+<form>
+  <!-- Appropriate inputs here! -->
+</form>
+
+<form ng-submit="create()">
+  <input type="text" ng-model="friend.first_name" name = 'first_name' value="">
+  <input type="text" ng-model="friend.last_name" name = 'last_name' placeholder="">
+  <input type="date" ng-model = 'friend.date' name="date">
+  <input type="submit" value = 'Add Friend'>
+</form>

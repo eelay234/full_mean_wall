@@ -1,0 +1,11 @@
+<!-- <div class="banner" ng-show="$root.friend"> -->
+
+<form ng-submit = "eC.update(friend._id)">
+First Name:  <input type="text" ng-model = 'friend.first_name' value = '{{friend.first_name}}'><br>
+Last Name:  <input type="text" ng-model = 'friend.last_name' placeholder = '{{friend.last_name}}'><br>
+Birthday:  <input type="date" ng-model = 'friend.date' value="{{ friend.date }}" ><br>
+  <input type="submit"  value="Update">
+</form>
+
+<a href = "#/"> Return to Index </a>
+</div>
